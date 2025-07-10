@@ -9,6 +9,8 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import AboutUs from './components/AboutUs';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import OurTeam from './components/OurTeam';
+
 import ServicesPage from './components/ServicesPage';
 function App() {
   useEffect(() => {
@@ -27,6 +29,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/about' element={<AboutUs/>}/>
+
+          <Route path='/team' element={<OurTeam/>}/>
           <Route path='/services' element={<ServicesPage/>}/>
         </Routes>
         <Footer />
