@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import HeroSection from './components/HeroSection';
 import SmoothParticleBackground from './components/SmoothParticleBackground';
 import Navbar from './components/Navbar'; 
-import Services from './Services';
-import Counter from './components/Counter';
-import About from './components/About';
-import Testimonials from './components/Testimonials'; 
+import Home from './components/Home';
 import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
@@ -20,16 +18,18 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      <SmoothParticleBackground />
-      <Navbar />  
-      <HeroSection />
-      <Services />
-      <Counter />
-      <About />
-      <Testimonials />
-      <Footer />
-    </div>
+    <Router>
+      <div className="relative min-h-screen">
+        <SmoothParticleBackground />
+        <Navbar />  
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/about' element={<AboutUs/>}/>
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
