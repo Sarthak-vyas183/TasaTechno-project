@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo2.png'; // adjust path if Navbar is nested deeper
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -44,13 +44,13 @@ const Navbar = () => {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {['Home', 'Services', 'About', 'Team', 'Contact'].map((item) => (
-              <a
+              <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                to={`${item.toLowerCase()}`}
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
