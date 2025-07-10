@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 import HeroSection from './components/HeroSection';
 import SmoothParticleBackground from './components/SmoothParticleBackground';
 import Navbar from './components/Navbar'; 
@@ -10,6 +11,7 @@ import AboutUs from './components/AboutUs';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import OurTeam from './components/OurTeam';
 
+import ServicesPage from './components/ServicesPage';
 function App() {
   useEffect(() => {
     AOS.init({
@@ -27,12 +29,14 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/about' element={<AboutUs/>}/>
+
           <Route path='/team' element={<OurTeam/>}/>
+          <Route path='/services' element={<ServicesPage/>}/>
         </Routes>
         <Footer />
       </div>
-    </Router>
-  );
-}
-
-export default App;
+        </Router>
+      );
+    }
+    
+    export default App;
