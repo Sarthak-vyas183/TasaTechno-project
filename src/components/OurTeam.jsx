@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import member1 from '../assets/logo1.jpg';
 import member2 from '../assets/logo1.jpg';
 import member3 from '../assets/logo1.jpg';
@@ -9,6 +12,10 @@ import member7 from '../assets/logo1.jpg';
 
 const OurTeam = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const teamData = [
     {
@@ -56,40 +63,40 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#0f172a] via-[#101828] to-[#0f172a] text-white py-24 px-6 md:px-20 font-orbitron relative">
-      <h2 className="mb-16 text-4xl font-bold text-center text-transparent md:text-6xl bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse">
+    <section className="relative bg-transparent text-white py-24 px-6 md:px-20 font-orbitron overflow-hidden">
+      <h2 className="mb-16 text-4xl md:text-6xl font-bold text-center text-cyan-400 animate-pulse">
         <span className="glow-text">Our Creative Minds</span>
       </h2>
 
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
         {teamData.map((member, idx) => (
           <div
             key={idx}
-            className="relative overflow-hidden transition-transform duration-700 bg-gray-900 bg-opacity-60 shadow-xl backdrop-blur-md cursor-pointer rounded-3xl hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,255,0.3)] group"
+            className={`relative rounded-3xl p-6 border border-cyan-400 bg-white/5 backdrop-blur-sm hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-500 hover:scale-105 cursor-pointer ${
+              idx === teamData.length - 1 ? 'md:col-span-3 md:w-1/3 md:mx-auto' : ''
+            }`}
             onMouseEnter={() => setSelectedMember(member)}
             onMouseLeave={() => setSelectedMember(null)}
+            data-aos="fade-up"
           >
-            <div className="flex items-center justify-center p-6">
+            <div className="flex justify-center mb-4">
               <img
                 src={member.image}
                 alt={member.name}
-                className="object-cover w-40 h-40 transition-all duration-700 ease-in-out rounded-full shadow-md group-hover:rounded-2xl group-hover:scale-110"
+                className="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-lg transition-transform duration-500 hover:scale-110"
               />
             </div>
-
-            <div className="px-4 pb-6 text-center">
+            <div className="text-center">
               <h3 className="text-xl font-bold text-cyan-400">{member.name}</h3>
               <p className="text-sm text-gray-300">{member.profession}</p>
             </div>
 
-            {/* Hover Popup */}
+            {/* Hover Description Overlay */}
             {selectedMember?.name === member.name && (
-              <div className="absolute top-0 left-0 z-10 flex flex-col items-center justify-center w-full h-full p-6 text-sm text-white transition-all duration-500 bg-black bg-opacity-50 backdrop-blur-sm rounded-3xl">
-                <h4 className="mb-2 text-lg font-semibold text-cyan-400">{member.name}</h4>
-                <p className="mb-1 text-sm italic text-gray-400">{member.profession}</p>
-                <p className="text-xs leading-relaxed text-center text-gray-300">
-                  {member.description}
-                </p>
+              <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 backdrop-blur-sm text-white rounded-3xl flex flex-col justify-center items-center px-6 transition-all duration-300 z-20">
+                <h4 className="text-lg font-semibold text-cyan-400">{member.name}</h4>
+                <p className="italic text-sm text-gray-400">{member.profession}</p>
+                <p className="mt-2 text-xs text-center text-gray-300">{member.description}</p>
               </div>
             )}
           </div>
