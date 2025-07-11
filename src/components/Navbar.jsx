@@ -78,14 +78,14 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col justify-center items-center gap-10 md:hidden">
           {['Home', 'Services', 'About', 'Portfolio', 'Contact'].map((item) => (
-            <a
+            <Link
               key={item}
-              href={`#${item.toLowerCase()}`}
+              to={`${item.toLowerCase()}`}
               onClick={() => setMobileMenuOpen(false)}
               className="text-3xl text-white hover:text-cyan-400 transition"
             >
               {item}
-            </a>
+            </Link>
           ))}
           <button className="mt-8 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-300">
             Get Quote
