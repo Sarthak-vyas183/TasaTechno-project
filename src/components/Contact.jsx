@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import logo from '../assets/logo.png'; // rectangular image
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative text-white py-24 px-6 md:px-20 font-orbitron bg-transparent"
+      className="relative text-white py-24 px-4 md:px-20 font-orbitron bg-transparent"
     >
       {/* Heading */}
       <h2
@@ -22,97 +22,95 @@ const Contact = () => {
       </h2>
 
       {/* Contact Info + Form */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left Side */}
-        <div className="space-y-6" data-aos="fade-right">
-          <div>
-            <h3 className="text-xl text-cyan-400 mb-2">📧 Email</h3>
-            <p className="text-gray-300">contact@tasatechno.com</p>
-          </div>
-          <div>
-            <h3 className="text-xl text-cyan-400 mb-2">📞 Phone</h3>
-            <p className="text-gray-300">+91 98765 43210</p>
-          </div>
-          <div>
-            <h3 className="text-xl text-cyan-400 mb-2">💬 WhatsApp</h3>
-            <p className="text-gray-300">+91 98765 43210</p>
-          </div>
-
-          {/* Rectangular Image Below WhatsApp - visible only on large screens */}
-          <div className="hidden lg:block mt-10 max-w-[420px]">
-            <img
-              src={logo}
-              alt="Decorative Graphic"
-              className="w-full h-[180px] object-contain rounded-xl shadow-lg"
-              data-aos="zoom-in"
-            />
-          </div>
-        </div>
-
-        {/* Form */}
-        <form
-          data-aos="fade-left"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSeNjIv4bLUxxxxxxxFORM_URL/formResponse"
-          method="POST"
-          target="_blank"
-          className="bg-black bg-opacity-40 p-8 rounded-xl shadow-2xl space-y-6"
-        >
-          <div>
-            <label htmlFor="name" className="block text-cyan-400 mb-2">Your Name</label>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        {/* Form Section */}
+        <div className="lg:col-span-2 bg-white/5 backdrop-blur-md rounded-xl p-8 shadow-xl" data-aos="fade-right">
+          <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">Write to Us Anytime</h3>
+          <form className="space-y-6">
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-400 text-white placeholder-gray-400 focus:outline-none"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Enter E-Mail"
+                className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-400 text-white placeholder-gray-400 focus:outline-none"
+                required
+              />
+            </div>
             <input
               type="text"
-              name="entry.1234567890" // <-- Replace with actual Google Form field ID
-              id="name"
+              placeholder="Phone Number"
+              className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-400 text-white placeholder-gray-400 focus:outline-none"
               required
-              className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-500 text-white placeholder-gray-400 focus:outline-none"
-              placeholder="Enter your name"
             />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-cyan-400 mb-2">Your Email</label>
-            <input
-              type="email"
-              name="entry.0987654321" // <-- Replace with actual Google Form field ID
-              id="email"
-              required
-              className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-500 text-white placeholder-gray-400 focus:outline-none"
-              placeholder="Enter your email"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block text-cyan-400 mb-2">Your Message</label>
             <textarea
-              name="entry.1122334455" // <-- Replace with actual Google Form field ID
-              id="message"
               rows="4"
+              placeholder="Write Message"
+              className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-400 text-white placeholder-gray-400 focus:outline-none"
               required
-              className="w-full px-4 py-2 rounded bg-[#1a1a2e] border border-cyan-500 text-white placeholder-gray-400 focus:outline-none"
-              placeholder="Write your message here..."
             ></textarea>
+            <button
+              type="submit"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded transition duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        {/* Info Section */}
+        <div className="bg-transparent rounded-xl p-8 shadow-2xl flex flex-col gap-6" data-aos="fade-left">
+          <h4 className="text-xl font-bold mb-4 text-white">Don't Forget to Contact Us</h4>
+          <div className="flex items-start gap-4">
+            <FaPhoneAlt className="mt-1 text-cyan-300" />
+            <div>
+              <span className="block font-semibold text-cyan-200">Call Us</span>
+              <span className="block text-white text-sm">+91 6352519413</span>
+            </div>
           </div>
-
-          <button
-            type="submit"
-            className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-full transition duration-300"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
-
-      {/* Google Map */}
-      <div className="mt-20" data-aos="fade-up">
-        <iframe
-          title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.073948168731!2d72.50119671510534!3d23.08603268492612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84fb9c381a89%3A0xaaa13cbd4c7b7117!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1614766400000!5m2!1sen!2sin"
-          width="100%"
-          height="300"
-          allowFullScreen=""
-          loading="lazy"
-          className="rounded-xl border-4 border-cyan-400 shadow-lg"
-        ></iframe>
+          <div className="flex items-start gap-4">
+            <FaEnvelope className="mt-1 text-cyan-300" />
+            <div>
+              <span className="block font-semibold text-cyan-200">Send E-Mail</span>
+              <span className="block text-white text-sm">info@tasatechno.com</span>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <FaMapMarkerAlt className="mt-1 text-cyan-300" />
+            <div>
+              <span className="block font-semibold text-cyan-200">Head Office</span>
+              <span className="block text-white text-sm">
+                B-303,3rd Flor,Shantiniketan businesses center,<br />
+                Gangotri circle,Nikol<br />
+                Ahmedabad - 380060
+              </span>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <FaMapMarkerAlt className="mt-1 text-cyan-300" />
+            <div>
+              <span className="block font-semibold text-cyan-200">Branch</span>
+              <span className="block text-white text-sm">
+                B-812,Pragati it park,mota varcha,Surat,<br />
+                Gujarat 394107
+              </span>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <FaPhoneAlt className="mt-1 text-cyan-300" />
+            <div>
+              <span className="block font-semibold text-cyan-200">Call Us</span>
+              <span className="block text-white text-sm">
+                +91 7359550788<br />
+                +91 9662972424
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
