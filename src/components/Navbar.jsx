@@ -35,11 +35,11 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <img 
+          <Link to={"/home"}><img 
   src={logo} 
   alt="TASA Techno Logo" 
   className="h-10 w-auto object-contain"
- />
+ /></Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -56,7 +56,7 @@ const Navbar = () => {
 
           {/* Desktop Button */}
           <button className="hidden md:block px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
-            Have Query
+            <Link to={"/contact"}>Have Query</Link>
           </button>
 
           {/* Mobile Menu Toggle */}
