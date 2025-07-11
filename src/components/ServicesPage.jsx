@@ -1,41 +1,62 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import logo from '../assets/logo4.jpg';
+import defaultImage from '../assets/logo4.jpg';
 
-// Rename ServicesPage array to 'services'
+import Img1 from '../assets/logo4.jpg';
+import Img2 from '../assets/logo4.jpg';
+import img3 from '../assets/logo4.jpg';
+
 const services = [
   {
     title: "Web Development",
-    desc: "We create fast, secure, and beautifully designed websites tailored for your brand. Whether you're launching a startup or upgrading your business site, we bring your vision to life through modern front-end and scalable back-end systems.",
+    desc: "We create fast, secure, and beautifully designed websites tailored for your brand...",
+    image: Img1,
   },
   {
     title: "Digital Forensics",
-    desc: "We investigate, analyze, and recover digital evidence with precision. Whether it’s for legal, audit, or internal security purposes, our forensic experts track down threats and provide detailed reports for critical actions.",
+    desc: "We investigate, analyze, and recover digital evidence with precision...",
+    image: Img2,
   },
   {
     title: "Cybersecurity Solutions",
-    desc: "From firewalls to advanced threat detection, we build multi-layered defense systems to protect your data. Our team identifies vulnerabilities before attackers do — because prevention beats cure.",
+    desc: "From firewalls to advanced threat detection, we build multi-layered defense systems...",
+    image: Img3,
   },
   {
     title: "Cloud & Hosting",
-    desc: "Experience seamless cloud deployment with rock-solid hosting. We offer fast, secure, and scalable solutions for websites, apps, and databases — all optimized for uptime and performance.",
+    desc: "Experience seamless cloud deployment with rock-solid hosting...",
+    image: null,
   },
   {
     title: "IT Training",
-    desc: "We equip teams and individuals with industry-relevant skills — from basic IT literacy to advanced tech stack training. Learn from experts and gain hands-on experience for real-world success.",
+    desc: "We equip teams and individuals with industry-relevant skills...",
+    image: null,
   },
   {
     title: "Technical Support",
-    desc: "24/7 support with a human touch. Our team helps resolve system errors, config issues, and user problems with patience, speed, and empathy — because your business can’t afford downtime.",
+    desc: "24/7 support with a human touch...",
+    image: null,
   },
   {
     title: "Bug Resolution",
-    desc: "Facing unexpected errors or weird behavior in your systems? We dive deep into your codebase, diagnose bugs quickly, and apply clean fixes without breaking other parts of your app.",
+    desc: "Facing unexpected errors or weird behavior in your systems?",
+    image: null,
   },
   {
     title: "VAPT Services",
-    desc: "Our Vulnerability Assessment and Penetration Testing services identify loopholes before hackers do. We simulate real-world attacks to strengthen your infrastructure's defense from the inside out.",
+    desc: "Our Vulnerability Assessment and Penetration Testing services identify loopholes...",
+    image: null,
+  },
+  {
+    title: "AI & Machine Learning",
+    desc: "Harness the power of AI to transform your business...",
+    image: null,
+  },
+  {
+    title: "Graphics Designing",
+    desc: "We create visually stunning graphics that capture your brand's essence...",
+    image: null,
   },
 ];
 
@@ -68,7 +89,7 @@ const ServicesPage = () => {
             <div data-aos="fade-right" className="flex justify-center">
               <div className="w-48 h-48 rounded-full border-4 border-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.5)] overflow-hidden animate-float hover:scale-105 transition-transform duration-500">
                 <img
-                  src={logo}
+                  src={service.image || defaultImage}
                   alt={service.title}
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -77,7 +98,9 @@ const ServicesPage = () => {
 
             {/* Text */}
             <div data-aos="fade-left" className="text-gray-200 space-y-4">
-              <h3 className="text-2xl md:text-3xl font-semibold text-cyan-400">{service.title}</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold text-cyan-400">
+                {service.title}
+              </h3>
               <p className="text-md leading-relaxed">{service.desc}</p>
             </div>
           </div>
