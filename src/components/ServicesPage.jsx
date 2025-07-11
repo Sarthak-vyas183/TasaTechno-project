@@ -3,9 +3,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import defaultImage from '../assets/logo4.jpg';
 
-import Img1 from '../assets/logo4.jpg';
-import Img2 from '../assets/logo4.jpg';
-import img3 from '../assets/logo4.jpg';
+import Img1 from '../assets/web.jpg';
+import Img2 from '../assets/digital forensic.png';
+import img3 from '../assets/cyber.png';
+import img4 from '../assets/cloud.png'
+import img5 from '../assets/IT training.png'
+import img6 from '../assets/technical support.jpg'
+import img7 from '../assets/bug resolution.png'
+import img8 from '../assets/VAPT service.png'
+import img10 from '../assets/gd.jpg'
+import img9 from '../assets/AIML.png'
+
 
 const services = [
   {
@@ -21,42 +29,42 @@ const services = [
   {
     title: "Cybersecurity Solutions",
     desc: "From firewalls to advanced threat detection, we build multi-layered defense systems...",
-    image: Img3,
+    image: img3,
   },
   {
     title: "Cloud & Hosting",
     desc: "Experience seamless cloud deployment with rock-solid hosting...",
-    image: null,
+    image: img4,
   },
   {
     title: "IT Training",
     desc: "We equip teams and individuals with industry-relevant skills...",
-    image: null,
+    image: img5,
   },
   {
     title: "Technical Support",
     desc: "24/7 support with a human touch...",
-    image: null,
+    image: img6,
   },
   {
     title: "Bug Resolution",
     desc: "Facing unexpected errors or weird behavior in your systems?",
-    image: null,
+    image: img7,
   },
   {
     title: "VAPT Services",
     desc: "Our Vulnerability Assessment and Penetration Testing services identify loopholes...",
-    image: null,
+    image: img8,
   },
   {
     title: "AI & Machine Learning",
     desc: "Harness the power of AI to transform your business...",
-    image: null,
+    image: img9,
   },
   {
     title: "Graphics Designing",
     desc: "We create visually stunning graphics that capture your brand's essence...",
-    image: null,
+    image: img10,
   },
 ];
 
@@ -68,10 +76,10 @@ const ServicesPage = () => {
   return (
     <section
       id="services"
-      className="bg-transparent text-white py-24 px-6 md:px-20 font-orbitron"
+      className="px-6 py-24 text-white bg-transparent md:px-20 font-orbitron"
     >
       <h2
-        className="text-4xl md:text-6xl font-bold text-center mb-16 text-cyan-400 animate-pulse"
+        className="mb-16 text-4xl font-bold text-center md:text-6xl text-cyan-400 animate-pulse"
         data-aos="zoom-in"
       >
         Our Services
@@ -91,17 +99,17 @@ const ServicesPage = () => {
                 <img
                   src={service.image || defaultImage}
                   alt={service.title}
-                  className="w-full h-full object-cover rounded-full"
+                  className="object-cover w-full h-full rounded-full"
                 />
               </div>
             </div>
 
             {/* Text */}
-            <div data-aos="fade-left" className="text-gray-200 space-y-4">
-              <h3 className="text-2xl md:text-3xl font-semibold text-cyan-400">
+            <div data-aos="fade-left" className="space-y-4 text-gray-200">
+              <h3 className="text-2xl font-semibold md:text-3xl text-cyan-400">
                 {service.title}
               </h3>
-              <p className="text-md leading-relaxed">{service.desc}</p>
+              <p className="leading-relaxed text-md">{service.desc}</p>
             </div>
           </div>
         ))}
