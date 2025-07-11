@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import member1 from '../assets/logo1.jpg';
+import member1 from '../assets/logo2.png';
 import member2 from '../assets/logo1.jpg';
 import member3 from '../assets/logo1.jpg';
 import member4 from '../assets/logo1.jpg';
@@ -63,12 +63,12 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="relative bg-transparent text-white py-24 px-6 md:px-20 font-orbitron overflow-hidden">
-      <h2 className="mb-16 text-4xl md:text-6xl font-bold text-center text-cyan-400 animate-pulse">
+    <section className="relative px-6 py-24 overflow-hidden text-white bg-transparent md:px-20 font-orbitron">
+      <h2 className="mb-16 text-4xl font-bold text-center md:text-6xl text-cyan-400 animate-pulse">
         <span className="glow-text">Our Creative Minds</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
         {teamData.map((member, idx) => (
           <div
             key={idx}
@@ -83,7 +83,7 @@ const OurTeam = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-lg transition-transform duration-500 hover:scale-110"
+                className="w-32 h-32 transition-transform duration-500 border-4 rounded-full shadow-lg border-cyan-400 hover:scale-110"
               />
             </div>
             <div className="text-center">
@@ -93,9 +93,9 @@ const OurTeam = () => {
 
             {/* Hover Description Overlay */}
             {selectedMember?.name === member.name && (
-              <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 backdrop-blur-sm text-white rounded-3xl flex flex-col justify-center items-center px-6 transition-all duration-300 z-20">
+              <div className="absolute top-0 left-0 z-20 flex flex-col items-center justify-center w-full h-full px-6 text-white transition-all duration-300 bg-black bg-opacity-60 backdrop-blur-sm rounded-3xl">
                 <h4 className="text-lg font-semibold text-cyan-400">{member.name}</h4>
-                <p className="italic text-sm text-gray-400">{member.profession}</p>
+                <p className="text-sm italic text-gray-400">{member.profession}</p>
                 <p className="mt-2 text-xs text-center text-gray-300">{member.description}</p>
               </div>
             )}
