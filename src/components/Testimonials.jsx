@@ -5,11 +5,13 @@ import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
-
 import SwiperCore from "swiper";
-import { Autoplay } from "swiper/modules"; // ✅ Fix for new Swiper
+import { Autoplay } from "swiper/modules";
 
-import logo4 from "../assets/logo4.jpg";
+import user1 from "../assets/vikram.jpg";
+import user2 from "../assets/neha.jpg";
+import user3 from "../assets/aarav.jpg";
+import user4 from "../assets/priya.jpg";
 
 SwiperCore.use([Autoplay]);
 
@@ -18,21 +20,25 @@ const testimonials = [
     name: "Aarav Mehta",
     feedback:
       "Tasa Techno transformed our outdated website into a sleek, high-performance platform. Loved their futuristic mindset!",
+    image: user1,
   },
   {
     name: "Priya Sharma",
     feedback:
       "The cybersecurity team at Tasa Techno identified vulnerabilities no one else could.",
+    image: user2,
   },
   {
     name: "Vikram Sinha",
     feedback:
       "From training our staff to fixing long-standing bugs, these guys handled everything with professionalism and a smile.",
+    image: user3,
   },
   {
     name: "Neha Patel",
     feedback:
       "Their technical support is lightning fast. Solved my issue at 2 AM. That’s real dedication!",
+    image: user4,
   },
 ];
 
@@ -73,8 +79,8 @@ const Testimonials = () => {
             >
               <div className="flex justify-center mb-4">
                 <img
-                  src={logo4}
-                  alt="Client"
+                  src={t.image}
+                  alt={t.name}
                   className="w-16 h-16 rounded-full border-2 border-cyan-400 shadow"
                 />
               </div>

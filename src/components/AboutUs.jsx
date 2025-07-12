@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import logo from '../assets/logo4.jpg';
+import logo from '../assets/office.jpg';
 
 const About = () => {
   useEffect(() => {
