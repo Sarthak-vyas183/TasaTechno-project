@@ -77,7 +77,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col justify-center items-center gap-10 md:hidden">
-          {['Home', 'Services', 'About', 'Portfolio', 'Contact'].map((item) => (
+          {['Home', 'Services', 'About', 'Team', 'Contact'].map((item) => (
             <Link
               key={item}
               to={`${item.toLowerCase()}`}
