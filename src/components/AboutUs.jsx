@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative bg-transparent text-white py-24 px-6 md:px-20 font-orbitron"
+      className="relative bg-transparent text-white py-24 px-4 md:px-20 font-orbitron overflow-x-hidden"
     >
       {/* Heading */}
       <h2
