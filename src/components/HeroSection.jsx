@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
+import CountUp from 'react-countup';
 
 const HeroSection = () => {
   const services = [
@@ -59,6 +60,9 @@ const HeroSection = () => {
             </p>
           </div>
         </div>
+
+        {/* Animated Counter Example */}
+        
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bounce-in delay-700">
