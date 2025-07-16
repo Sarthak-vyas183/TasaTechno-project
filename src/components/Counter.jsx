@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,9 +12,27 @@ const stats = [
 const Counter = () => {
   const [visible, setVisible] = useState(false);
   const [counts, setCounts] = useState(stats.map(() => 0));
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     AOS.init();
+  }, []);
+
+  // Intersection Observer to trigger animation on scroll into view
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -32,12 +50,12 @@ const Counter = () => {
 
   return (
     <section
+      ref={sectionRef}
       className="w-full py-24 px-6 md:px-16 font-orbitron text-white relative z-10"
       id="counter-section"
       data-aos="fade-up"
       data-aos-offset="200"
       data-aos-once="true"
-      onMouseEnter={() => setVisible(true)}
     >
       <h2 className="text-4xl md:text-5xl text-center font-bold text-cyan-400 mb-16 animate-fade-down">
         OUR ACHIEVEMENTS
