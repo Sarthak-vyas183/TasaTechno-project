@@ -76,7 +76,7 @@ const ServicesPage = () => {
   return (
     <section
       id="services"
-      className="px-6 py-24 text-white bg-transparent md:px-20 font-orbitron"
+      className="px-4 py-24 text-white bg-transparent md:px-20 font-orbitron overflow-x-hidden"
     >
       <h2
         className="mb-16 text-4xl font-bold text-center md:text-6xl text-cyan-400 animate-pulse"

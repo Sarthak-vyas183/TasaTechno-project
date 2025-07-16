@@ -23,12 +23,15 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav
         className={`
-          fixed top-6 left-1/2 transform -translate-x-1/2 
-          w-[calc(100%-3rem)] max-w-6xl 
+          fixed top-6
+          left-0 right-0 w-full
+          mx-0 md:mx-0
+          px-3 md:px-6
+          md:left-1/2 md:right-auto md:w-[calc(100%-3rem)] md:max-w-6xl md:transform md:-translate-x-1/2
           bg-black/70 backdrop-blur-md 
           border border-gray-700 rounded-xl 
           shadow-lg shadow-cyan-500/10 
-          px-6 py-3 
+          py-3
           z-50 transition-all duration-500 ease-in-out
           ${visible ? 'translate-y-0 opacity-100' : '-translate-y-24 opacity-0'}
         `}
@@ -77,7 +80,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col justify-center items-center gap-10 md:hidden">
-          {['Home', 'Services', 'About', 'Portfolio', 'Contact'].map((item) => (
+          {['Home', 'Services', 'About', 'Team', 'Contact'].map((item) => (
             <Link
               key={item}
               to={`${item.toLowerCase()}`}

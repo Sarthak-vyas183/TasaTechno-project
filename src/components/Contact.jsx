@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative text-white py-24 px-4 md:px-20 font-orbitron bg-transparent"
+      className="relative text-white py-24 px-4 md:px-20 font-orbitron bg-transparent overflow-x-hidden"
     >
       {/* Heading */}
       <h2

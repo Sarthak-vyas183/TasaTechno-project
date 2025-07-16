@@ -22,22 +22,21 @@ function App() {
 
   return (
     <Router>
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen overflow-x-hidden">
         <SmoothParticleBackground />
         <Navbar />  
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/about' element={<AboutUs/>}/>
-
           <Route path='/team' element={<OurTeam/>}/>
           <Route path='/services' element={<ServicesPage/>}/>
           <Route path='/contact' element={<Contact/>}/>
         </Routes>
         <Footer />
       </div>
-        </Router>
-      );
-    }
-    
-    export default App;
+    </Router>
+  );
+}
+
+export default App;
